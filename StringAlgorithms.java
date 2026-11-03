@@ -7,7 +7,12 @@ public class StringAlgorithms {
      */
     public static String printCharacters(String word) {
         // TODO: Implement this method
-        return "";
+        String printCharacters = "";
+        for(int i = 0;i<word.length();i++){
+            printCharacters += word.substring(i,i+1);
+            printCharacters += "\n";
+        }
+        return printCharacters;
     }
 
 
@@ -18,7 +23,11 @@ public class StringAlgorithms {
      */
     public static String reverseWord(String word) {
         // TODO: Implement this method
-        return "";
+        String reverseWord = "";
+        for(int i=word.length();i>0;i--){
+            reverseWord += word.substring(i-1,i);
+        }
+        return reverseWord;
     }
 
 
@@ -29,7 +38,15 @@ public class StringAlgorithms {
      */
     public static String capitalizeString(String sentence) {
         // TODO: Implement this method
-        return "";
+        String capitalizeString = sentence;
+        String capLetter = "";
+        for(int i = 0; i<sentence.length();i++){
+              if(sentence.substring(i,i+1) == " "){
+                  capLetter = sentence.substring(i+1,i+2).toUpperCase();
+                  
+              }
+        }
+        return capitalizeString;
     }
 
 
@@ -63,25 +80,26 @@ public class StringAlgorithms {
     public static void main(String[] args) {
 
         // TODO: Add test calls for each challenge method
-        
+        String myWord = "Spiderman";
+        String mySentence = "I really like spiderman.";
         System.out.println("Testing printCharacters:");
         // Example:
-        // System.out.println(printCharacters("hello"));
-
+        System.out.println(printCharacters(myWord));
+        
         System.out.println("\nTesting reverseWord:");
         // Example:
-        // System.out.println(reverseWord("hello"));
+        System.out.println(reverseWord(myWord));
 
         System.out.println("\nTesting capitalizeString:");
         // Example:
-        // System.out.println(capitalizeString("the quick brown fox"));
+        //System.out.println(capitalizeString(mySentence));
 
         System.out.println("\nTesting detectPalindrome:");
         // Example:
-        // System.out.println(detectPalindrome("racecar"));
+        // System.out.println(detectPalindrome(myWord));
 
         System.out.println("\nTesting firstUniqueChar:");
         // Example:
-        // System.out.println(firstUniqueChar("swiss"));
+        // System.out.println(firstUniqueChar(myWord));
     }
 }
