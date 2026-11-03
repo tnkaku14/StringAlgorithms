@@ -40,10 +40,13 @@ public class StringAlgorithms {
         // TODO: Implement this method
         String capitalizeString = sentence;
         String capLetter = "";
+        sentence.substring(0,1).toUpperCase();
         for(int i = 0; i<sentence.length();i++){
-              if(sentence.substring(i,i+1) == " "){
+              if(sentence.substring(i,i+1).equals(" ")){
                   capLetter = sentence.substring(i+1,i+2).toUpperCase();
-                  
+                  capitalizeString = capitalizeString.substring(0,i+1);
+                  capitalizeString += capLetter;
+                  capitalizeString += sentence.substring(i+2,sentence.length());
               }
         }
         return capitalizeString;
@@ -57,7 +60,17 @@ public class StringAlgorithms {
      */
     public static boolean detectPalindrome(String word) {
         // TODO: Implement this method
-        return false;
+        boolean isPalindrome = false;
+        String letter = "";
+        for(int i=0;i<word.length();i++){
+            if(word.substring(i,i+1).equalsIgnoreCase(word.substring(word.length()-i -1,word.length()-i))){
+               isPalindrome = true;
+            }
+            else{
+               isPalindrome = false;
+            }
+        }
+        return isPalindrome;
     }
 
 
@@ -80,8 +93,8 @@ public class StringAlgorithms {
     public static void main(String[] args) {
 
         // TODO: Add test calls for each challenge method
-        String myWord = "Spiderman";
-        String mySentence = "I really like spiderman.";
+        String myWord = "Racecar";
+        String mySentence = "I really like racecars.";
         System.out.println("Testing printCharacters:");
         // Example:
         System.out.println(printCharacters(myWord));
@@ -92,11 +105,11 @@ public class StringAlgorithms {
 
         System.out.println("\nTesting capitalizeString:");
         // Example:
-        //System.out.println(capitalizeString(mySentence));
+        System.out.println(capitalizeString(mySentence));
 
         System.out.println("\nTesting detectPalindrome:");
         // Example:
-        // System.out.println(detectPalindrome(myWord));
+        System.out.println(detectPalindrome(myWord));
 
         System.out.println("\nTesting firstUniqueChar:");
         // Example:
