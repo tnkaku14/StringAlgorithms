@@ -40,7 +40,8 @@ public class StringAlgorithms {
         // TODO: Implement this method
         String capitalizeString = sentence;
         String capLetter = "";
-        sentence.substring(0,1).toUpperCase();
+        capLetter = capitalizeString.substring(0,1).toUpperCase();
+        capitalizeString = capLetter + sentence.substring(1);
         for(int i = 0; i<sentence.length();i++){
               if(sentence.substring(i,i+1).equals(" ")){
                   capLetter = sentence.substring(i+1,i+2).toUpperCase();
@@ -94,7 +95,7 @@ public class StringAlgorithms {
 
         // TODO: Add test calls for each challenge method
         String myWord = "Racecar";
-        String mySentence = "I really like racecars.";
+        String mySentence = "i really like racecars.";
         System.out.println("Testing printCharacters:");
         // Example:
         System.out.println(printCharacters(myWord));
